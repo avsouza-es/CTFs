@@ -1,0 +1,46 @@
+1. **Mis Observaciones al Analizar la Máquina que Diego Ademir de Platzi Proporcionó**:
+    - Descargué inicialmente el archivo y arranqué la máquina virtual (VM).
+    - En la pantalla de inicio de sesión, se muestran tres usuarios:
+        - `admin`
+        - `Administrador`
+        - `root`
+
+2. **Contraseñas Probadas**:
+    - Intentaste varias contraseñas, incluyendo `admin`, `admin123`, `WindowsSrv1` y `null`.
+    - Sin embargo, no pudiste acceder a la máquina.
+
+3. **Verificación de Servicios**:
+    - Exploraste los servicios disponibles en la VM.
+    - A pesar de cambiar la configuración de **VMware Player** a **NAT**, aún no pudiste detectar los servicios.
+    - En **PowerShell**, ejecutaste el comando `ipconfig -a` y obtuviste información sobre las redes.
+    - Configuraste **VMware Player** para usar la red `vwnet1`, obteniendo las direcciones IP `192.168.44.1` y `192.168.44.131` con servicios en ejecución.
+
+3. **Limitaciones**:
+    - Detuviste el análisis debido a la falta de espacio en el disco duro.
+    - No pudiste instalar herramientas en **Kali Linux** ejecutándolo bajo **WSL** (Windows Subsystem for Linux).
+
+4. **Análisis de la Imagen**:
+    - Intentaste extraer información de la imagen publicada por Diego Ademir en Discord.
+    - Al usar el Bloc de notas de Windows, no encontraste nada anormal en el archivo.
+    - Planeas reanalizarlo con herramientas más adecuadas.
+
+5. **Pistas Adicionales**:
+    - Diego Ademir compartió más pistas en Discord.
+
+6. **Análisis del Archivo de Registro (vmware.log)**:
+    - Ayer, estabas analizando el archivo `vmware.log` que venía junto con la máquina virtual.
+    - Algunas cosas te parecieron relevantes, pero aún no sabes cómo extraer información de ellas:
+        - Iniciaste la VM desde la línea de comandos con el siguiente comando:
+            ```
+            "C:\Program Files (x86)\VMware\VMware Workstation\x64\vmware-vmx.exe" "-T" "querytoken" "-s" "vmx.stdio.keep=TRUE" "-#" "product=1;name=VMware Workstation;version=17.0.1;buildnumber=21139696;licensename=VMware Workstation;licenseversion=17.0;" "-@" "pipe=\.\pipe\vmx633bbe9cd1e88854;msgs=ui" "C:\Users\adhem\OneDrive\Documentos\Virtual Machines\WindowsSrv1\Windows_Server _2012_r2.vmx"
+            ```
+        - Parece que hay un usuario llamado `null`, pero aún no lo has probado:
+            ```
+            2023-12-10T21:12:23.140Z In(05) vmx Connecting 'ui' to pipe '\.\pipe\vmx633bbe9cd1e88854' with user '(null)'
+            ```
+        - También parece ser un puerto:
+            ```
+            2023-12-10T21:12:23.784Z In(05) vmx DICT authd.client.port = "903"
+            ```
+
+Hasta ahora, solo has logrado extraer esta información. ¡Sigue investigando! 🕵️‍♂️
