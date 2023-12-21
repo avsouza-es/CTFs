@@ -36,7 +36,7 @@ Então configurei o vmware player na vm para vwnet1.
 	• DICA 3: EL PERIÓDICOHAY QUE LEERLO, DE PRINCIPIO A FIN.
 	• DICA 4: OYE, DEJASTE LAS LLAVES DENTRO DE LA CASA?...
 	• DICA 5: DEFINITIVAMENTE EL FÚTBOL!!!
-
+7. Após tentar três vezes senhas para o root via force_brute o sistema me bloqueou.
 
 Material de apoio:
 • Classes Platzi: 	Curso de Hacking: Servicios de Red
