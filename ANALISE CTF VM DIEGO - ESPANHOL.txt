@@ -10,16 +10,17 @@ Luego configuré el vmware player en la vm a vwnet1.
 	Escaneé con nmap para encontrar los ordenadores en la red. Como encontre con ipconfig /all la vmnet1 con IP:192.168.44.1 como se para esta red:
 	Puedes activar el script para que grabe todo lo que haces en la consola y así poder repasar los pasos más tarde.
 		# nmap -sS -A 192.168.44.0/24 (no me preocupé por el tipo de escaneo a utilizar o si este escaneo alertaría al administrador del sistema, ya que el escaneo es local - pero deberías pensar en esto cuando escanees una red real)
-			encontró dos hosts activos
-				- 192.168.44.1 - Acabé pensando que Windows Server 2012 R2 era este host, pero resultó que era mi máquina (¡falta de atención!).
-				- 192.168.44.131 (WIN-M0187E6Q52D) con servicios en ejecución - Este es el host con Windows Server 2012 R2.
-					Puertos abiertos: 135, 139, 445, 3389 (CVE-2019-0708 - Usar fuerza bruta con contraseñas complejas), 49152 a 49158.
-					Versión de algunos servicios: SMB-2
-				- Posibilidades de prueba:
-					- 3389: - Metasploit: Existe un módulo llamado auxiliary/scanner/rdp/rdp_login que escanea credenciales vía diccionario o brute password contra el puerto RDP. Puede descubrir credenciales débiles
-							- Fuerza bruta vía Hydra: Una herramienta como Hydra lanzada sobre el puerto 3389 puede probar varias combinaciones hasta descubrir la contraseña si es débil.
-							- Exploit CVE-2019-0708: Metasploit también tiene un exploit para esta vulnerabilidad que permite ejecutar código si se aplica a esa versión de RDP. Esto daría al sistema una shell remota.
-							- Verificar el fallo En concreto, el parche que soluciona CVE-2019-0708 en Windows Server 2012 R2 es KB4534310, que se incluye en las actualizaciones acumulativas de noviembre de 2019. Sin embargo, no parece posible explotar este fallo, ya que la versión de WS es SW_DVD9_Windows_Svr_Std_and_DataCtr_2012_R2_64Bit_Spanish_-4_MLF_X19-82897.ISO.
+	encontró dos hosts activos
+		- 192.168.44.1 - Acabé pensando que Windows Server 2012 R2 era este host, pero resultó que era mi máquina (¡falta de atención!).
+		- 192.168.44.131 (WIN-M0187E6Q52D) con servicios en ejecución - Este es el host con Windows Server 2012 R2.
+			Puertos abiertos: 135, 139, 445, 3389 (CVE-2019-0708 - Usar fuerza bruta con contraseñas complejas), 49152 a 49158.
+			Versión de algunos servicios: SMB-2
+		- Posibilidades de prueba:
+		- 3389: - Metasploit: Existe un módulo llamado auxiliary/scanner/rdp/rdp_login que escanea credenciales vía diccionario o brute password contra el puerto 		RDP. Puede descubrir credenciales débiles
+		- Fuerza bruta vía Hydra: Una herramienta como Hydra lanzada sobre el puerto 3389 puede probar varias combinaciones hasta descubrir la contraseña si es 		débil.
+		- Exploit CVE-2019-0708: Metasploit también tiene un exploit para esta vulnerabilidad que permite ejecutar código si se aplica a esa versión de RDP. Esto 		daría al sistema una shell remota.
+		- Verificar el fallo En concreto, el parche que soluciona CVE-2019-0708 en Windows Server 2012 R2 es KB4534310, que se incluye en las actualizaciones 			acumulativas de noviembre de 2019. Sin embargo, no parece posible explotar este fallo, ya que la versión de WS es 			 
+                SW_DVD9_Windows_Svr_Std_and_DataCtr_2012_R2_64Bit_Spanish_-4_MLF_X19-82897.ISO.
 3. Tuve que parar aquí porque mi disco duro estaba lleno y no pude instalar herramientas en kali linux corriendo bajo WSL.
 
 4. También intenté extraer información de la imagen que Diego Ademir colgó en discord, pero como estaba usando el bloc de notas de windows no encontré nada raro en el archivo. Pero lo volveré a analizar con las herramientas ideales para este tipo de análisis.
