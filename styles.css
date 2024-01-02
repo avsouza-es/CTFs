@@ -1,5 +1,56 @@
 body {
     background-color: black;
-    color: lime;
+    color: green;
     font-family: 'Courier New', Courier, monospace;
 }
+        
+.form-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+}
+
+.content p, .content ul {
+    text-align: justify;
+    margin: auto;
+    width: 85%;
+    padding: 10px;
+}
+
+
+.header {
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+}
+
+input, select, textarea {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    border: 1px solid green;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+button {
+    background-color: green;
+    color: black;
+    border: none;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
