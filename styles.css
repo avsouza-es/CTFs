@@ -54,3 +54,10 @@ button {
     cursor: pointer;
 }
 
+h2 {
+    text-align: center;
+}
+
+.indented-list  {
+  padding-left: 40px;
+}

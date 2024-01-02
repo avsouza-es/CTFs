@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TechneSolutions</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <script src="../script.js"></script>
+</head>
+<body>
+    <div class="header">
+        <img src="../imagens/logo.png" alt="Logo TechneSolutions">
+        <div class="navbar">
+            <button onclick="redirectToPage('index.html')">HOME</button>
+            <button onclick="redirectToPage('pentesting.html')">PENTESTING</button>
+            <button onclick="redirectToPage('writeups.html')">WRITE-UP</button>
+            <button onclick="redirectToPage('articles.html')">ARTICLES</button>
+        </div>
+    </div>
+    <div class="content">
+        <h1 style="display: flex; justify-content: center;">Relatório de Resolução de CTF</h1>
+
+        <h2 style="text-align: left">Desafio CTF</h2>
+
+        <p>O desafio CTF consistia em conseguir acesso a máquina CTF.</p>
+
+        <h2 style="text-align: left">Resolução</h2>
+
+        <ul>
+            <li>Baixei a máquina virtual e a iniciei no VMWare Player 17.</li>
+            <li>Fiz uma varredura na minha rede local para detectar o IP do HOST_CTF.</li>
+            <li>Fiz uma varredura no HOST_CTF para ver quais portas estavam abertas, quais serviços e versões estavam rodando.</li>
+            <li>
+            <img src="imagens/ctf_diego_platzi_imagem_1.png" alt="Imagem_1" style="display: block; margin-left: auto; margin-right: auto;">
+            </li>
+            <li>
+            <img src="imagens/ctf_diego_platzi_imagem_2.png" alt="Imagem_2" style="display: block; margin-left: auto; margin-right: auto;">
+            </li>
+            <li>Usei o crackmapexec para realizar um ataque de força bruta nas senhas dos usuários conhecidos do HOST_CTF.</li>
+            <li>
+            <img src="imagens/ctf_diego_platzi_imagem_3.png" alt="Imagem_2" style="display: block; margin-left: auto; margin-right: auto;">
+            </li>
+            <li>Usei o dicionário fornecido pelo Diego para descobrir a senha do usuário "admin".</li>
+        </ul>
+
+        <h2 style="text-align: left">Aprendizados</h2>
+
+        <ul>
+            <li>Aprendi a fazer uma varredura de rede para detectar o IP de um host.</li>
+            <li>Aprendi a fazer uma varredura de portas para ver quais portas estão abertas em um host.</li>
+            <li>Aprendi a usar o crackmapexec para realizar um ataque de força bruta nas senhas de um host.</li>
+            <li>Aprendi a usar um dicionário para descobrir senhas.</li>
+        </ul>
+
+        <h2 style="text-align: left">Conclusão</h2>
+
+        <p>Consegui resolver o desafio CTF e descobrir a senha do usuário "admin". Foi um desafio divertido e aprendi muito com ele.</p>
+
+        <h2 style="text-align: left">Tipo de Desafio CTF</h2>
+
+        <p>O desafio CTF era um desafio de exploração de rede.</p>
+    </div>
+</body>
+</html>
